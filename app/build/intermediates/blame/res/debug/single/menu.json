@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\build\\intermediates\\res\\merged\\debug\\menu\\gatt_services.xml",
+        "source": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\src\\main\\res\\menu\\gatt_services.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main_screen.xml",
+        "source": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\src\\main\\res\\menu\\menu_main_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_stream_screen.xml",
+        "source": "C:\\Users\\Kayci\\AndroidStudioProjects\\WritingFiles\\ECGShirt-DesignDay\\app\\src\\main\\res\\menu\\menu_stream_screen.xml"
+    }
+]

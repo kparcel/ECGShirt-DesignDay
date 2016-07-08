@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ecgshirt" >
+
+    <uses-sdk
+        android:maxSdkVersion="22"
+        android:minSdkVersion="18"
+        android:targetSdkVersion="21" />
+
+    <!-- Request permissions to enable Bluetooth, keep screen on, save files and vibrate -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permissions.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permissions.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:name="com.android.tools.fd.runtime.BootstrapApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.ecgshirt.MainScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ecgshirt.DeviceScanActivity"
+            android:label="@string/title_activity_device_scan" >
+        </activity>
+        <activity
+            android:name="com.ecgshirt.DeviceControlActivity"
+            android:label="@string/title_activity_device_control"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <service
+            android:name="com.ecgshirt.BluetoothLeService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+    </application>
+
+</manifest>

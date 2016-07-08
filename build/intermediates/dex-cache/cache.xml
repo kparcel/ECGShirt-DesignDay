@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Kayci\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-21.0.3_4e70d20d450dc434e9d9ce9def4af7a532127b5d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-21.0.3_c302d876c0e737a4bf0996d1ca6746f892ed5a28\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-21.0.3_27d98454daf2b2aa0bc39753399ade9c579b17c9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c55f02c0a08210871ccfaf20a72ef80256e30e38">
+        <dex dex="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b0a32b1b397f53d3ecfd4de9c8518456eead1174\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\libs\androidplot-core-0.6.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3db0daea52375b26bfa61c59b8df93950bdefbbc">
+        <dex dex="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\2\androidplot-core-0.6.1_99db9cb628b821802795e026b9bf52fb0057eefc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bf23e328fdf20743fb279153b3b5852150d7ae5b">
+        <dex dex="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_07d6a36add4a7d91ddc62172ee7f36d05defeac9\classes.dex" />
+    </item>
+
+</items>
