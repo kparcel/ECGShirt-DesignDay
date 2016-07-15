@@ -4,30 +4,35 @@
     api-level="23"
     density="560dpi"
     format="7"
-    timestamp="1499171184346618"
+    timestamp="99077517312050"
     token="-9130927128455620884" >
 
     <task
         name="javac"
-        duration="442" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="245" />
+        duration="43" />
     <task
         name="verifier"
-        duration="46" />
+        duration="2" />
 
     <artifact
-        location="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+        type="DEX" />
 
-    <build timestamp="1499171184346618" >
+    <build timestamp="93787383278484" >
         <artifact
             location="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="99077517312050" >
+        <artifact
+            location="C:\Users\Kayci\AndroidStudioProjects\WritingFiles\ECGShirt-DesignDay\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

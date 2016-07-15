@@ -22,6 +22,7 @@ import java.util.HashMap;
  */
 public class SampleGattAttributes {
     private static HashMap<String, String> attributes = new HashMap();
+    public static String HEART_RATE_SERVICE = "0000180d-0000-1000-8000-00805f9b34fb";
     public static String HEART_RATE_MEASUREMENT = "00002a37-0000-1000-8000-00805f9b34fb";
     public static String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
     
@@ -30,20 +31,48 @@ public class SampleGattAttributes {
     public static String ECG_INFO_VOLTAGE_SERVICE = "00002220-0000-1000-8000-00805f9b34fb";
     public static String ECG_CHARACTERTISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
 
+    //Information for Activity Monitoring Service: Angel Sensor Steps & Acceleration Energy
+    public static String ANGEL_ACTIVITY_MONITORING_SERVICE = "68b52738-4a04-40e1-8f83-337a29c3284d";
+    public static String ANGEL_STEP_COUNT_MEASUREMENT = "7a543305-6b9e-4878-ad67-29c5a9d99736";
+    public static String ANGEL_STEP_COUNT_CONFIG = "7a542902-6b9e-4878-ad67-29c5a9d99736"; //NOT SURE IF THIS IS RIGHT
+    public static String ANGEL_ACCEL_MAG_MEASUREMENT = "9e3bd0d7-bdd8-41fd-af1f-5e99679183ff";
+
+    //Information for Angel Sensor Temperature
+    public static String HEALTH_THERMOMETER_SERVICE = "00001809-0000-1000-8000-00805f9b34fb";
+    public static String TEMPERATURE_MEASUREMENT = "00002A1C-0000-1000-8000-00805f9b34fb";
+    public static String TEMPERATURE_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
+
     static {
         // Sample Services.
-        attributes.put("0000180d-0000-1000-8000-00805f9b34fb", "Heart Rate Service");
         attributes.put("0000180a-0000-1000-8000-00805f9b34fb", "Device Information Service");
-        
-        // ECG BLE service
         attributes.put(ECG_INFO_VOLTAGE_SERVICE, "ECG Signal");
-        
-        // Sample Characteristics.
-        attributes.put(HEART_RATE_MEASUREMENT, "Heart Rate Measurement");
-        attributes.put("00002a29-0000-1000-8000-00805f9b34fb", "Manufacturer Name String");
-        
         //ECG BLE read/notify characteristic
         attributes.put(ECG_INFO_VOLTAGE_CHARACTERISTIC, "ECG Info (Voltage)");
+        //ECG BLE read/notify characteristic
+        attributes.put(ECG_INFO_VOLTAGE_CHARACTERISTIC, "ECG Info (Voltage)");
+
+        // Angel Services
+        attributes.put(HEART_RATE_SERVICE, "Heart Rate Service");
+        attributes.put(HEALTH_THERMOMETER_SERVICE, "Health Thermometer Service");
+        attributes.put(ANGEL_ACTIVITY_MONITORING_SERVICE, "Activity Monitoring Service");
+        
+        // Standard/sample Characteristics.
+        attributes.put(HEART_RATE_MEASUREMENT, "Heart Rate Measurement");
+
+
+        attributes.put(TEMPERATURE_MEASUREMENT, "Skin Temperature Measurement");
+
+
+        //Angel Characteristics
+        attributes.put(ANGEL_STEP_COUNT_MEASUREMENT, "Angel Step Count");
+        attributes.put(ANGEL_ACCEL_MAG_MEASUREMENT, "Angel Accel. Energy Mag.");
+
+        //Configurations?
+        attributes.put(ANGEL_STEP_COUNT_CONFIG, "Step Count Configuration");
+        attributes.put(CLIENT_CHARACTERISTIC_CONFIG, "Configuration for Standard BT char");
+
+
+        //
 
     }
 

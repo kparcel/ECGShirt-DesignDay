@@ -8,6 +8,7 @@
     <string name="connectButtonText">Connect To Shirt</string>
     <string name="connect_screen">Connect Screen Activity</string>
     <string name="connected">Connected</string>
+    <string name="data_value">data here</string>
     <string name="disconnected">Disconnected</string>
     <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
     <string name="hello_world">Hello world!</string>
@@ -23,6 +24,7 @@
     <string name="seniorDesignTeamInfo">NCSU ASSIST TEAM 29 - ECG TSHIRT</string>
     <string name="title_activity_bluetooth_le_service">BluetoothLeService</string>
     <string name="title_activity_device_control">DeviceControlActivity</string>
+    <string name="title_activity_device_control2">DeviceControlActivity2</string>
     <string name="title_activity_device_scan">DeviceScanActivity</string>
     <string name="title_activity_plot_screen">ECG plot</string>
     <string name="title_activity_sample_gatt_attributes">SampleGattAttributes</string>

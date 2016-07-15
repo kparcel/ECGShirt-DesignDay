@@ -21,18 +21,19 @@ public final class R {
     }
     public static final class id {
         public static final int SeniorDesignInfo=0x7f080000;
-        public static final int action_settings=0x7f08000c;
+        public static final int action_settings=0x7f08000d;
         public static final int connectButton=0x7f080001;
-        public static final int connection_state=0x7f080002;
-        public static final int device_address=0x7f080005;
-        public static final int device_name=0x7f080004;
-        public static final int menu_connect=0x7f080007;
-        public static final int menu_disconnect=0x7f080008;
-        public static final int menu_home=0x7f080009;
-        public static final int menu_refresh=0x7f080006;
-        public static final int menu_scan=0x7f08000a;
-        public static final int menu_stop=0x7f08000b;
-        public static final int plotarea=0x7f080003;
+        public static final int connection_state=0x7f080003;
+        public static final int data_value=0x7f080004;
+        public static final int device_address=0x7f080002;
+        public static final int device_name=0x7f080006;
+        public static final int gatt_services_list=0x7f080005;
+        public static final int menu_connect=0x7f080008;
+        public static final int menu_disconnect=0x7f080009;
+        public static final int menu_home=0x7f08000a;
+        public static final int menu_refresh=0x7f080007;
+        public static final int menu_scan=0x7f08000b;
+        public static final int menu_stop=0x7f08000c;
     }
     public static final class layout {
         public static final int actionbar_indeterminate_progress=0x7f030000;
@@ -53,28 +54,30 @@ public final class R {
         public static final int connectButtonText=0x7f060003;
         public static final int connect_screen=0x7f060004;
         public static final int connected=0x7f060005;
-        public static final int disconnected=0x7f060006;
-        public static final int error_bluetooth_not_supported=0x7f060007;
-        public static final int hello_world=0x7f060008;
-        public static final int label_data=0x7f060009;
-        public static final int label_device_address=0x7f06000a;
-        public static final int label_state=0x7f06000b;
-        public static final int menu_connect=0x7f06000c;
-        public static final int menu_disconnect=0x7f06000d;
-        public static final int menu_home=0x7f06000e;
-        public static final int menu_scan=0x7f06000f;
-        public static final int menu_stop=0x7f060010;
-        public static final int no_data=0x7f060011;
-        public static final int seniorDesignTeamInfo=0x7f060012;
-        public static final int title_activity_bluetooth_le_service=0x7f060013;
-        public static final int title_activity_device_control=0x7f060014;
-        public static final int title_activity_device_scan=0x7f060015;
-        public static final int title_activity_plot_screen=0x7f060016;
-        public static final int title_activity_sample_gatt_attributes=0x7f060017;
-        public static final int title_devices=0x7f060018;
-        public static final int unknown_characteristic=0x7f060019;
-        public static final int unknown_device=0x7f06001a;
-        public static final int unknown_service=0x7f06001b;
+        public static final int data_value=0x7f060006;
+        public static final int disconnected=0x7f060007;
+        public static final int error_bluetooth_not_supported=0x7f060008;
+        public static final int hello_world=0x7f060009;
+        public static final int label_data=0x7f06000a;
+        public static final int label_device_address=0x7f06000b;
+        public static final int label_state=0x7f06000c;
+        public static final int menu_connect=0x7f06000d;
+        public static final int menu_disconnect=0x7f06000e;
+        public static final int menu_home=0x7f06000f;
+        public static final int menu_scan=0x7f060010;
+        public static final int menu_stop=0x7f060011;
+        public static final int no_data=0x7f060012;
+        public static final int seniorDesignTeamInfo=0x7f060013;
+        public static final int title_activity_bluetooth_le_service=0x7f060014;
+        public static final int title_activity_device_control=0x7f060015;
+        public static final int title_activity_device_control2=0x7f060016;
+        public static final int title_activity_device_scan=0x7f060017;
+        public static final int title_activity_plot_screen=0x7f060018;
+        public static final int title_activity_sample_gatt_attributes=0x7f060019;
+        public static final int title_devices=0x7f06001a;
+        public static final int unknown_characteristic=0x7f06001b;
+        public static final int unknown_device=0x7f06001c;
+        public static final int unknown_service=0x7f06001d;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

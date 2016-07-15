@@ -16,6 +16,8 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
+
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.UUID;
@@ -26,6 +28,9 @@ import java.util.UUID;
  */
 public class BluetoothLeService extends Service {
     private final static String TAG = BluetoothLeService.class.getSimpleName();
+
+    CharSequence text = "Wrote to File!";
+    int duration = Toast.LENGTH_LONG;
 
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -57,6 +62,15 @@ public class BluetoothLeService extends Service {
             UUID.fromString(SampleGattAttributes.ECG_INFO_VOLTAGE_SERVICE);
     public final static UUID UUID_ECG_WAVEFORM_CHAR =
             UUID.fromString(SampleGattAttributes.ECG_INFO_VOLTAGE_CHARACTERISTIC);
+
+    //UUID information for Angel Sensor
+    public final static UUID UUID_ANGEL_STEP_COUNT_CHAR =
+            UUID.fromString(SampleGattAttributes.ANGEL_STEP_COUNT_MEASUREMENT);
+    public final static UUID UUID_SKIN_TEMPERATURE_CHAR =
+            UUID.fromString(SampleGattAttributes.TEMPERATURE_MEASUREMENT);
+    public final static UUID UUID_ANGEL_ACCEL_MAG_CHAR =
+            UUID.fromString(SampleGattAttributes.ANGEL_ACCEL_MAG_MEASUREMENT);
+
 
 
 
@@ -121,6 +135,7 @@ public class BluetoothLeService extends Service {
                                  final BluetoothGattCharacteristic characteristic) {
         final Intent intent = new Intent(action);
 
+        //TODO: must figure out how to parse for each characteristic!!!
         //received notification for a new ECG packet 
         if (UUID_ECG_WAVEFORM_CHAR.equals(characteristic.getUuid())) {
             byte[] ecg_bytes = characteristic.getValue();
@@ -135,8 +150,48 @@ public class BluetoothLeService extends Service {
 	            ecg_floats += String.valueOf(i) + ",";
             }
             intent.putExtra(EXTRA_DATA, ecg_floats);
-            sendBroadcast(intent);
         }
+        if (UUID_SKIN_TEMPERATURE_CHAR.equals(characteristic.getUuid())){
+            int flag = characteristic.getProperties();
+            int format = -1;
+            if (flag !=0){
+                format = BluetoothGattCharacteristic.FORMAT_UINT8; //flags for temp characteristic, first char is Celcius (float)
+                Log.d(TAG, "Skin Temperature format UNIT8");
+            } else {
+                format = BluetoothGattCharacteristic.FORMAT_UINT16;
+                Log.d(TAG, "Heart rate format UINT16.");
+            }
+
+            final float skinTemp = characteristic.getFloatValue(format, 1);
+            Log.d(TAG, "Received skin temperature");
+            intent.putExtra(EXTRA_DATA, String.valueOf(skinTemp));
+        }
+        if (UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
+            int flag = characteristic.getProperties();
+            int format = -1;
+            if ((flag & 0x01) != 0) {
+                format = BluetoothGattCharacteristic.FORMAT_UINT16;
+                Log.d(TAG, "Heart rate format UINT16.");
+            } else {
+                format = BluetoothGattCharacteristic.FORMAT_UINT8;
+                Log.d(TAG, "Heart rate format UINT8.");
+            }
+            final int heartRate = characteristic.getIntValue(format, 1);
+            Log.d(TAG, String.format("Received heart rate: %d", heartRate));
+            intent.putExtra(EXTRA_DATA, String.valueOf(heartRate));
+        }
+        if (UUID_ANGEL_STEP_COUNT_CHAR.equals(characteristic.getUuid())){
+            int flag = characteristic.getProperties();
+            int format = -1;
+            if (flag !=0){
+                format = BluetoothGattCharacteristic.FORMAT_UINT32; //labeled as a uint24
+                Log.d(TAG, "Step Count format UNIT32");
+            }
+            final int stepCount = characteristic.getIntValue(format, 0);
+            Log.d(TAG, String.format("Received step count %.0f", stepCount));
+            intent.putExtra(EXTRA_DATA, String.valueOf(stepCount));
+        }
+        sendBroadcast(intent);
 
     	//DO NOTHING
         /*else {
@@ -152,7 +207,7 @@ public class BluetoothLeService extends Service {
     }
 
     public class LocalBinder extends Binder {
-        BluetoothLeService getService() {
+       public BluetoothLeService getService() {
             return BluetoothLeService.this;
         }
     }
@@ -295,14 +350,14 @@ public class BluetoothLeService extends Service {
         }
         mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
 
-        /*
+        //TODO: check that config values are correct if errors appear.
         // This is specific to Heart Rate Measurement.
         if (UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             mBluetoothGatt.writeDescriptor(descriptor);
-        }*/
+        }
         
         // Enable notifications for the ECG shirt
         if (UUID_ECG_WAVEFORM_CHAR.equals(characteristic.getUuid())) {
@@ -311,6 +366,23 @@ public class BluetoothLeService extends Service {
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
             mBluetoothGatt.writeDescriptor(descriptor);
         }
+
+        // Enable notifications for Angel Step Count
+        if (UUID_ANGEL_STEP_COUNT_CHAR.equals(characteristic.getUuid())){
+            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
+                    UUID.fromString(SampleGattAttributes.ANGEL_STEP_COUNT_CONFIG));
+            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            mBluetoothGatt.writeDescriptor(descriptor);
+        }
+
+        // Enable notifications for Angel skin Temperature
+        if (UUID_SKIN_TEMPERATURE_CHAR.equals(characteristic.getUuid())){
+            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
+                    UUID.fromString(SampleGattAttributes.TEMPERATURE_CONFIG));
+            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+            mBluetoothGatt.writeDescriptor(descriptor);
+        }
+
         
     }
 
